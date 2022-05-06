@@ -9,19 +9,19 @@ One specifically interesting branch of research is deep probabilistic programmin
 However, recent SOTA DPPL approaches allow only for limited conditional probabilistic queries and do not offer the power of true joint probability estimation. 
 In our work, we propose an easy integration of tractable probabilistic inference within a DPPL. To this end we introduce SLASH, a novel DPPL that consists of Neural-Probabilistic Predicates (NPPs) and a logical program, united via answer set programming. 
 NPPs are a novel design principle allowing for the unification of all deep model types and combinations thereof to be represented as a single probabilistic predicate.
-In this context, we introduce a novel $$+/-$$ notation for answering various types of probabilistic queries by adjusting the atom notations of a predicate.
+In this context, we introduce a novel $+/-$ notation for answering various types of probabilistic queries by adjusting the atom notations of a predicate.
 We evaluate SLASH on the benchmark task of MNIST addition as well as novel tasks for DPPLs such as missing data prediction, generative learning and set prediction with state-of-the-art performance, thereby showing the effectiveness and generality of our method.
 
 <a href="https://kr2022.cs.tu-dortmund.de/index.php"><img src="https://img.shields.io/badge/Conference-KR2022-blue" height=22.5></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" height=22.5></a>
 
 ## Introduction
-This is the repository for SLASH, the deep declrative probabilistic programming language introduced within **Neural-Probabilistic Answer Set Programming**.
+This is the repository for SLASH, the deep declarative probabilistic programming language introduced within **Neural-Probabilistic Answer Set Programming**. Please see [SLASH_Supplementary_Materials.pdf](https://markdown.land "Supplementary Materials") for additional information including detailed proofs and experimental details.
 
 
 ## 1. Prerequisites
 ### 1.1 Cloning SLASH including submodules
-To clone slash including all submodules use:
+To clone SLASH including all submodules use:
 ```
 git clone --recurse-submodules -j8 https://github.com/askrix/SLASH 
 ```
@@ -45,8 +45,8 @@ The following packages are installed:
 - torchsummary
 - GradualWarmupSheduler
 
-### 1.3 Virtualenv
-To use virtualenv run the following commands. This creates a new virtual environment and installs all packages needed. Tested Python Versions 3.6. For using cuda version `10.x` with pytorch remove the `+cu113` version appendix in the `requirements.txt` file otherwise it will use Cuda version `11.3`.
+### 1.3 Virtual environment
+To use virtualenv run the following commands. This creates a new virtual environment and installs all packages needed. Tested Python Versions 3.6. For using cuda version `10.x` with pytorch remove the `+cu113` version appendix in the `requirements.txt` file otherwise it will use CUDA version `11.3`.
 ```
 python3 -m venv slash_env
 source slash_env/bin/activate
