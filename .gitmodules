@@ -1,0 +1,9 @@
+[submodule "NeurASP"]
+	path = src/NeurASP
+	url = https://github.com/azreasoners/NeurASP.git
+[submodule "EinsumNetworks"]
+	path = src/EinsumNetworks
+	url = https://github.com/cambridge-mlg/EinsumNetworks.git
+[submodule "src/tabnet"]
+	path = src/tabnet
+	url = https://github.com/dreamquark-ai/tabnet

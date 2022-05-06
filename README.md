@@ -1,0 +1,83 @@
+# SLASH 
+
+> **Neural-Probabilistic Answer Set Programming**
+> 
+> Arseny Skryagin, Wolfgang Stammer, Daniel Ochs, Devendra Singh Dhami , Kristian Kersting
+>
+> Abstract: The goal of combining the robustness of neural networks and the expressivity of symbolic methods has rekindled the interest in Neuro-Symbolic AI. 
+One specifically interesting branch of research is deep probabilistic programming languages (DPPLs) which carry out probabilistic logical programming via the probability estimations of deep neural networks.
+However, recent SOTA DPPL approaches allow only for limited conditional probabilistic queries and do not offer the power of true joint probability estimation. 
+In our work, we propose an easy integration of tractable probabilistic inference within a DPPL. To this end we introduce SLASH, a novel DPPL that consists of Neural-Probabilistic Predicates (NPPs) and a logical program, united via answer set programming. 
+NPPs are a novel design principle allowing for the unification of all deep model types and combinations thereof to be represented as a single probabilistic predicate.
+In this context, we introduce a novel $+/-$ notation for answering various types of probabilistic queries by adjusting the atom notations of a predicate.
+We evaluate SLASH on the benchmark task of MNIST addition as well as novel tasks for DPPLs such as missing data prediction, generative learning and set prediction with state-of-the-art performance, thereby showing the effectiveness and generality of our method.
+
+<a href="https://kr2022.cs.tu-dortmund.de/index.php"><img src="https://img.shields.io/badge/Conference-KR2022-blue" height=22.5></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" height=22.5></a>
+
+## Introduction
+This is the repository for SLASH, the deep declrative probabilistic programming language introduce within **Neural-Probabilistic Answer Set Programming**.
+
+
+## 1. Prerequisites
+### 1.1 Cloning SLASH including submodules
+To clone slash including all submodules use:
+```
+git clone --recurse-submodules -j8 https://github.com/askrix/SLASH 
+```
+### 1.2 Anaconda
+The `environment.yaml` provides all packages needed to run a SLASH program using the Anaconda package manager. To create a new conda environment install Anaconda  ([installation page](https://docs.anaconda.com/anaconda/install/)) and then create a new environment using the following command:
+```
+conda env create -n slash -f environment.yml
+conda activate env_dev
+pip install git+https://github.com/ildoonet/pytorch-gradual-warmup-lr.git
+
+```
+
+The following packages are installed:
+- pytorch
+- clingo #version 5.5.1
+- scikit-image
+- scikit-learn 
+- seaborn
+- tqdm
+- rtpt
+- tensorboard #only needed for standalone slot attention
+- torchsummary
+- GradualWarmupSheduler
+
+### 1.3 Virtualenv
+To use virtualenv run the following commands. This creates a new virtual environment and installs all packages needed. Tested Python Versions 3.6. For using cuda version `10.x` with pytorch remove the `+cu113` version appendix in the `requirements.txt` file otherwise it will use Cuda version `11.3`.
+```
+python3 -m venv slash_env
+source slash_env/bin/activate
+pip install --upgrade pip
+python3 -m pip install -r requirements.txt -f https://download.pytorch.org/whl/torch_stable.html
+
+```
+
+### 1.4 Docker
+Alternatively you can also run slash using docker. For this you first need to create an image using the provided `Dockerfile`.
+
+To start first create an image named `slash` and then run the container using that image.  In the slash base folder execute: 
+```
+docker build . -t slash:0.01
+docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=<GPU-ID> --ipc=host -it --rm  -v /$(pwd):/splpmln slash:1.0
+
+```
+
+
+
+
+## 2. Project Structure
+```
+--data: contains datasets
+--results: contains all exported results for tensorboard
+--src: source files which has its own readme
+--asp_playground.ipynb - Notebook explaining how we use ASP for training slot attention.
+  
+```
+
+## 3. Getting started
+Go visit the  ``` src/experiments/mnist_addition``` folder to get familar with SLASH.   
+If you want to know more about stable model generation take a look at ``` asp_playground.ipynb```.
