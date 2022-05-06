@@ -16,7 +16,7 @@ We evaluate SLASH on the benchmark task of MNIST addition as well as novel tasks
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" height=22.5></a>
 
 ## Introduction
-This is the repository for SLASH, the deep declarative probabilistic programming language introduced within **Neural-Probabilistic Answer Set Programming**. Please see [SLASH_Supplementary_Materials.pdf](https://markdown.land "Supplementary Materials") for additional information including detailed proofs and experimental details.
+This is the repository for SLASH, the deep declarative probabilistic programming language introduced within **Neural-Probabilistic Answer Set Programming**. Please see [SLASH_Supplementary_Materials.pdf](https://github.com/askrix/SLASH/blob/master/SLASH_Supplementary_Materials.pdf "Supplementary Materials") for additional information including detailed proofs and experimental details.
 
 
 ## 1. Prerequisites
@@ -84,7 +84,7 @@ If you use this code for your research, please cite the following:
 @inproceedings{skryagin2022KR,
   title={Neural-Probabilistic Answer Set Programming},
   author={Arseny Skryagin and Wolfgang Stammer and Daniel Ochs and Devendra Singh Dhami and Kristian Kersting},
-  booktitle = {Proceedings of the 19th International Conference on Principles of Knowledge Representation and Reasoning (KR)},
+  booktitle={Proceedings of the 19th International Conference on Principles of Knowledge Representation and Reasoning (KR)},
   year={2022}
 }
 ```
