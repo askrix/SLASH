@@ -1,3 +1,9 @@
+<script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript">
+</script>
+
+
 # SLASH 
 
 > **Neural-Probabilistic Answer Set Programming**
@@ -9,14 +15,14 @@ One specifically interesting branch of research is deep probabilistic programmin
 However, recent SOTA DPPL approaches allow only for limited conditional probabilistic queries and do not offer the power of true joint probability estimation. 
 In our work, we propose an easy integration of tractable probabilistic inference within a DPPL. To this end we introduce SLASH, a novel DPPL that consists of Neural-Probabilistic Predicates (NPPs) and a logical program, united via answer set programming. 
 NPPs are a novel design principle allowing for the unification of all deep model types and combinations thereof to be represented as a single probabilistic predicate.
-In this context, we introduce a novel $+/-$ notation for answering various types of probabilistic queries by adjusting the atom notations of a predicate.
+In this context, we introduce a novel $$+/-$$ notation for answering various types of probabilistic queries by adjusting the atom notations of a predicate.
 We evaluate SLASH on the benchmark task of MNIST addition as well as novel tasks for DPPLs such as missing data prediction, generative learning and set prediction with state-of-the-art performance, thereby showing the effectiveness and generality of our method.
 
 <a href="https://kr2022.cs.tu-dortmund.de/index.php"><img src="https://img.shields.io/badge/Conference-KR2022-blue" height=22.5></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" height=22.5></a>
 
 ## Introduction
-This is the repository for SLASH, the deep declrative probabilistic programming language introduce within **Neural-Probabilistic Answer Set Programming**.
+This is the repository for SLASH, the deep declrative probabilistic programming language introduced within **Neural-Probabilistic Answer Set Programming**.
 
 
 ## 1. Prerequisites
@@ -31,7 +37,6 @@ The `environment.yaml` provides all packages needed to run a SLASH program using
 conda env create -n slash -f environment.yml
 conda activate env_dev
 pip install git+https://github.com/ildoonet/pytorch-gradual-warmup-lr.git
-
 ```
 
 The following packages are installed:
@@ -53,7 +58,6 @@ python3 -m venv slash_env
 source slash_env/bin/activate
 pip install --upgrade pip
 python3 -m pip install -r requirements.txt -f https://download.pytorch.org/whl/torch_stable.html
-
 ```
 
 ### 1.4 Docker
@@ -63,10 +67,7 @@ To start first create an image named `slash` and then run the container using th
 ```
 docker build . -t slash:0.01
 docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=<GPU-ID> --ipc=host -it --rm  -v /$(pwd):/splpmln slash:1.0
-
 ```
-
-
 
 
 ## 2. Project Structure
@@ -75,9 +76,21 @@ docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=<GPU-ID> --ipc=host -it --
 --results: contains all exported results for tensorboard
 --src: source files which has its own readme
 --asp_playground.ipynb - Notebook explaining how we use ASP for training slot attention.
-  
 ```
+
 
 ## 3. Getting started
 Go visit the  ``` src/experiments/mnist_addition``` folder to get familar with SLASH.   
 If you want to know more about stable model generation take a look at ``` asp_playground.ipynb```.
+
+
+## Citation
+If you use this code for your research, please cite the following:
+```
+@inproceedings{skryagin2022KR,
+  title={Neural-Probabilistic Answer Set Programming},
+  author={Arseny Skryagin and Wolfgang Stammer and Daniel Ochs and Devendra Singh Dhami and Kristian Kersting},
+  booktitle = {Proceedings of the 19th International Conference on Principles of Knowledge Representation and Reasoning (KR)},
+  year={2022}
+}
+```
